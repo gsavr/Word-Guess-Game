@@ -24,6 +24,9 @@ p.lead{
 .gamecontent{
     background-image: url("../images/back_silver_darker.png"); 
     border-radius: 8px;
+    /* font-family: 'Arvo', serif; */
+    font-family: 'Exo 2', sans-serif;
+    /* font-family: 'Source Code Pro', monospace; */
 }
 
 @media screen and (max-width: 640px) {
