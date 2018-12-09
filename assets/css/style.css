@@ -1,0 +1,33 @@
+html body{
+    align-content: center; 
+    background-image: url("../images/background-26.jpg"); 
+    background-size: 1800px 1000px; 
+    background-attachment: fixed;
+}
+
+.jumbotron{
+    background-image: url("../images/back_silver.png");
+    opacity: .6;
+    padding: 20px;
+}
+
+p.lead{
+    padding-top:10px;
+}
+
+#game-title{
+    font-family: 'Bungee', cursive;
+    /* font-family: 'Kanit', sans-serif; */
+}
+
+
+.gamecontent{
+    background-image: url("../images/back_silver_darker.png"); 
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 640px) {
+    .headpic{
+      display: none;
+    }
+}
