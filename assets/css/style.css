@@ -27,6 +27,12 @@ p.lead{
     /* font-family: 'Arvo', serif; */
     font-family: 'Exo 2', sans-serif;
     /* font-family: 'Source Code Pro', monospace; */
+    margin-bottom: 30px;
+}
+
+#currentWord{
+    font-size: 40px;
+    letter-spacing: 10px;
 }
 
 @media screen and (max-width: 640px) {
