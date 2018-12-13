@@ -14,7 +14,8 @@ when site loads, random word is chosen,
 
 then word is split into letters and displayed on screen as blanks
 
-
+function #2
+check that letter pressed is right or wrong
 
 if the correct letter was chosen, then it is diplayed on the correct blank where it goes
 
