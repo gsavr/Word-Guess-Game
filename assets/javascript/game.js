@@ -63,10 +63,11 @@ document.onkeydown = function(event){
 
             blanks[z] = userChoice;
             numberSpaces--;
-           
+            console.log(userChoice);
+            console.log(answerLettersArr[z])
         }
         output = output + blanks[z] + " ";
-
+        
         /* if(userChoice !== answerLettersArr[z])
         {   
             
@@ -74,16 +75,17 @@ document.onkeydown = function(event){
             badChoice()
         } */
     }
-    if(userChoice !== answerLettersArr[z])
+    if(!wordAnswer.includes(userChoice))
         {   
-            
+            turnsLeft--;
+            document.getElementById("numberGuesses").innerHTML = turnsLeft;
             //document.getElementById("alreadyGuessed").innerHTML = userChoice;
             badChoice()
+            
         }
     
     document.getElementById("currentWord").innerHTML = output;
-    turnsLeft--;
-    document.getElementById("numberGuesses").innerHTML = turnsLeft;
+    
 
     console.log(turnsLeft);
     console.log("spaces left: " +numberSpaces);
