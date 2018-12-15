@@ -7,7 +7,7 @@ var answerLettersArr = [];
 
 // will count the number of blanks that will be shown
 var numberSpaces = 0 ;
-var blanks = [numberSpaces]
+var blanks = []
 //will store incorrect answers
 var wrongLetter= [];
 //do I need another var?
@@ -28,18 +28,14 @@ function Start(){
     numberSpaces = answerLettersArr.length;
 
     // create loop to change element id to blanks
-    for (var i=0; i < numberSpaces; i++)
-    {
-        blanks[i]=" _";
-        output = output + blanks[i];
+    for (var i=0; i < numberSpaces; i++){
+        blanks.push("_");
+        document.getElementById("currentWord").innerHTML = " " + blanks.join("");
     }
-    document.getElementById("currentWord").innerHTML =  output;
-    output = "";
-    
 console.log(wordAnswer);
 console.log(answerLettersArr);
 console.log(numberSpaces);
-
+console.log(blanks.join(" "))
 }
 
 Start()
@@ -53,15 +49,18 @@ document.onkeydown = function(event){
     output = "";
     for (var z = 0; z < answerLettersArr.length; z++) 
     {
-          
-        if(userChoice == answerLettersArr[z])
-        { 
+        //alert(answerLettersArr[z]);    
+        if(userChoice == answerLettersArr[z]){ 
+            
             console.log("you got a letter! " +  answerLettersArr[z] );
 
-            blanks[z] = userChoice;
-           
+            blanks.push(userChoice);
+            //answerLettersArr.push(userChoice);
+            //document.getElementById("currentWord").innerHTML = answerLettersArr[z];
+
+            //rightChoice();
         }
-        output = output + blanks[z] + " ";
+        output = output + display[z] + " ";
     }
     
     document.getElementById("currentWord").innerHTML = output;
@@ -72,4 +71,33 @@ document.onkeydown = function(event){
 }
                 
           
-            
+            /* }
+            else{
+                
+                //document.getElementById("alreadyGuessed").appendChild(wrongLetter);
+
+                console.log("you don't have the same letter than the guesscomputer " +  answerLettersArr[z] );
+                turnsLeft--;
+                document.getElementById("numberGuesses").innerHTML = turnsLeft;
+                document.getElementById("alreadyGuessed").innerhtml  = wrongLetter;
+                wrongChoice();
+                
+            }
+        }
+
+    }; */
+
+/* function rightChoice() {
+    
+}
+
+function wrongChoice() {
+    
+    
+
+    
+    
+    
+    //write incorrect letter to html
+}
+ */
