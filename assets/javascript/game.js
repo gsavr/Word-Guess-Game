@@ -9,12 +9,12 @@ var answerLettersArr = [];
 var numberSpaces = 0 ;
 var blanks = [numberSpaces]
 //will store incorrect answers
-var wrongLetter= [];
+var badLetter= [];
 //do I need another var?
 //will store number of wins
 var win = 0;
 //shows turns left in game
-var turnsLeft = 10;
+var turnsLeft = 15;
 // output to screen
 var output = "";
 
@@ -22,10 +22,11 @@ var userChoice = ""; //key event
 
 function Start(){
     output = "";
-    turnsLeft=11;
+    document.getElementById("alreadyGuessed").innerHTML = "";
+    turnsLeft=15;
     wordAnswer = words[Math.floor(Math.random() * words.length)];
 
-    answerLettersArr = wordAnswer.split("");//dont need this for it to work but then I cannot have the letters separated
+    answerLettersArr = wordAnswer.split("");//dont need this for it to work but then I cannot have the letters separated to be checked
 
     numberSpaces = answerLettersArr.length;
 
@@ -63,7 +64,53 @@ document.onkeydown = function(event){
             blanks[z] = userChoice;
             numberSpaces--;
            
-        /* }
+        }
+        output = output + blanks[z] + " ";
+
+        /* if(userChoice !== answerLettersArr[z])
+        {   
+            
+            //document.getElementById("alreadyGuessed").innerHTML = userChoice;
+            badChoice()
+        } */
+    }
+    if(userChoice !== answerLettersArr[z])
+        {   
+            
+            //document.getElementById("alreadyGuessed").innerHTML = userChoice;
+            badChoice()
+        }
+    
+    document.getElementById("currentWord").innerHTML = output;
+    turnsLeft--;
+    document.getElementById("numberGuesses").innerHTML = turnsLeft;
+
+    console.log(turnsLeft);
+    console.log("spaces left: " +numberSpaces);
+
+    if (turnsLeft <1)
+    {
+    alert("You lose, the word was " + wordAnswer)
+    Start();
+    }
+
+    if (numberSpaces <0)
+    {
+        win++;
+        document.getElementById("win").innerHTML = win;
+        alert("you win! The word was " + wordAnswer)
+        Start();
+    }
+    console.log("wins : " + win);
+    
+    function badChoice(){
+        var node = document.createElement("span");
+        var badLetter = document.createTextNode(userChoice);
+        node.appendChild(badLetter);
+        document.getElementById("alreadyGuessed").appendChild(node);}
+}
+
+/* }
         else
         {
             wrongChoice();
@@ -87,33 +134,6 @@ document.onkeydown = function(event){
     document.getElementById("alreadyGuessed").innerHTML = wrongLetter;
     document.getElementById("numberGuesses").innerHTML = turnsLeft;
  } */
-        }
-        output = output + blanks[z] + " ";
-    }
-    
-    document.getElementById("currentWord").innerHTML = output;
-    turnsLeft--;
-    document.getElementById("numberGuesses").innerHTML = turnsLeft;
-
-    console.log(turnsLeft);
-    console.log("spaces left: " +numberSpaces);
-
-    if (turnsLeft <1)
-    {
-    alert("you lose")
-    Start();
-    }
-
-    if (numberSpaces <0)
-    {
-        win++;
-        document.getElementById("win").innerHTML = win;
-        alert("you win")
-        Start();
-    }
-    console.log("wins : " + win)
-}
-
 
                 
           
