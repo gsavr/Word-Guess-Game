@@ -26,7 +26,7 @@ function Start(){
     turnsLeft=15;
     wordAnswer = words[Math.floor(Math.random() * words.length)];
 
-    answerLettersArr = wordAnswer.split("");//dont need this for it to work but then I cannot have the letters separated to be checked
+    answerLettersArr = wordAnswer.split("");
 
     numberSpaces = answerLettersArr.length;
 
@@ -68,12 +68,6 @@ document.onkeydown = function(event){
         }
         output = output + blanks[z] + " ";
         
-        /* if(userChoice !== answerLettersArr[z])
-        {   
-            
-            //document.getElementById("alreadyGuessed").innerHTML = userChoice;
-            badChoice()
-        } */
     }
     if(!wordAnswer.includes(userChoice))
         {   
@@ -112,31 +106,3 @@ document.onkeydown = function(event){
         document.getElementById("alreadyGuessed").appendChild(node);}
 }
 
-/* }
-        else
-        {
-            wrongChoice();
-        }
-
-        output = output + blanks[z] + " ";
-    }
-    
-    document.getElementById("currentWord").innerHTML = output;
-    
-    
-
-    console.log(turnsLeft)
-}
-
- function wrongChoice ()
- {
-    turnsLeft--;
-    wrongLetter = userChoice;
-
-    document.getElementById("alreadyGuessed").innerHTML = wrongLetter;
-    document.getElementById("numberGuesses").innerHTML = turnsLeft;
- } */
-
-                
-          
-            
