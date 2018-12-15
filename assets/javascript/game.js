@@ -21,6 +21,8 @@ var output = "";
 var userChoice = ""; //key event
 
 function Start(){
+    output = "";
+    turnsLeft=11;
     wordAnswer = words[Math.floor(Math.random() * words.length)];
 
     answerLettersArr = wordAnswer.split("");//dont need this for it to work but then I cannot have the letters separated
@@ -60,16 +62,58 @@ document.onkeydown = function(event){
 
             blanks[z] = userChoice;
            
+        /* }
+        else
+        {
+            wrongChoice();
+        }
+
+        output = output + blanks[z] + " ";
+    }
+    
+    document.getElementById("currentWord").innerHTML = output;
+    
+    
+
+    console.log(turnsLeft)
+}
+
+ function wrongChoice ()
+ {
+    turnsLeft--;
+    wrongLetter = userChoice;
+
+    document.getElementById("alreadyGuessed").innerHTML = wrongLetter;
+    document.getElementById("numberGuesses").innerHTML = turnsLeft;
+ } */
         }
         output = output + blanks[z] + " ";
     }
     
     document.getElementById("currentWord").innerHTML = output;
-    output = "";
+    numberSpaces--;
     turnsLeft--;
+    document.getElementById("numberGuesses").innerHTML = turnsLeft;
 
-    console.log(output)
+    console.log(turnsLeft);
+    console.log(numberSpaces);
+
+    if (turnsLeft <1)
+    {
+    alert("you lose")
+    Start();
+    }
+
+    if (numberSpaces <0)
+    {
+        win++;
+        alert("you win")
+        Start();
+    }
+    console.log(win)
 }
+
+
                 
           
             
