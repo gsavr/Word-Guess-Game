@@ -39,4 +39,8 @@ p.lead{
     .headpic{
       display: none;
     }
+
+    #currentWord{
+        width: 100%;
+    }
 }

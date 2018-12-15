@@ -61,6 +61,7 @@ document.onkeydown = function(event){
             console.log("you got a letter! " +  answerLettersArr[z] );
 
             blanks[z] = userChoice;
+            numberSpaces--;
            
         /* }
         else
@@ -91,12 +92,11 @@ document.onkeydown = function(event){
     }
     
     document.getElementById("currentWord").innerHTML = output;
-    numberSpaces--;
     turnsLeft--;
     document.getElementById("numberGuesses").innerHTML = turnsLeft;
 
     console.log(turnsLeft);
-    console.log(numberSpaces);
+    console.log("spaces left: " +numberSpaces);
 
     if (turnsLeft <1)
     {
@@ -107,10 +107,11 @@ document.onkeydown = function(event){
     if (numberSpaces <0)
     {
         win++;
+        document.getElementById("win").innerHTML = win;
         alert("you win")
         Start();
     }
-    console.log(win)
+    console.log("wins : " + win)
 }
 
 
