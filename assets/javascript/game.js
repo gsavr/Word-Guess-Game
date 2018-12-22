@@ -90,12 +90,15 @@ document.onkeydown = function(event){
     Start();
     }
 
-    if (numberSpaces <0)
+    if (numberSpaces <1)
     {
         win++;
         document.getElementById("win").innerHTML = win;
-        alert("you win! The word was " + wordAnswer)
-        Start();
+        setTimeout(function() {
+            alert("you win! The word was " + wordAnswer);
+          }, 500);
+        setTimeout(function() {
+           Start();}, 500);
     }
     console.log("wins : " + win);
     
