@@ -90,7 +90,7 @@ document.onkeydown = function(event){
     Start();
     }
 
-    if (numberSpaces <1)
+    if (numberSpaces === 0)
     {
         win++;
         document.getElementById("win").innerHTML = win;
