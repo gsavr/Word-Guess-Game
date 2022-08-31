@@ -1,47 +1,71 @@
-html body{
-    align-content: center; 
-    background-image: url("../images/background-26.jpg"); 
-    background-size: 1800px 1000px; 
-    background-attachment: fixed;
+html body {
+  align-content: center;
+  background-image: url("../images/background-26.jpg");
+  background-size: 1800px 1000px;
+  background-attachment: fixed;
 }
 
-.jumbotron{
-    background-image: url("../images/back_silver.png");
-    opacity: .6;
-    padding: 20px;
+.jumbotron {
+  background-image: url("../images/back_silver.png");
+  opacity: 0.6;
+  padding: 20px;
 }
 
-p.lead{
-    padding-top:10px;
+p.lead {
+  padding-top: 10px;
 }
 
-#game-title{
-    font-family: 'Bungee', cursive;
-    /* font-family: 'Kanit', sans-serif; */
+#game-title {
+  font-family: "Bungee", cursive;
+  /* font-family: 'Kanit', sans-serif; */
 }
 
-
-.gamecontent{
-    background-image: url("../images/back_silver_darker.png"); 
-    border-radius: 8px;
-    /* font-family: 'Arvo', serif; */
-    font-family: 'Exo 2', sans-serif;
-    /* font-family: 'Source Code Pro', monospace; */
-    margin-bottom: 30px;
+.gamecontent {
+  background-image: url("../images/back_silver_darker.png");
+  border-radius: 8px;
+  /* font-family: 'Arvo', serif; */
+  font-family: "Exo 2", sans-serif;
+  /* font-family: 'Source Code Pro', monospace; */
+  margin-bottom: 30px;
 }
 
-#currentWord{
-    font-size: 30px;
-    letter-spacing: 10px;
+#currentWord {
+  font-size: 30px;
+  letter-spacing: 10px;
 }
 
-@media screen and (max-width: 640px) {
-    .headpic{
-      display: none;
-    }
+.input {
+  display: flex;
+  align-content: ;
+  justify-content: center;
+}
 
-    #currentWord{
-        width: 100%;
-        font-size: 16px;
-    }
+.ios-visible {
+  display: none;
+}
+
+.ios-instruction {
+  display: none;
+}
+
+@media only screen and (max-width: 640px) {
+  .headpic {
+    display: none;
+  }
+
+  #currentWord {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .ios-visible {
+    display: inherit;
+    width: 1px;
+    height: 25px;
+  }
+  .ios-instruction {
+    display: inherit;
+  }
 }
