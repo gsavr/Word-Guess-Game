@@ -103,10 +103,12 @@ p.lead {
   }
   .footer {
     font-size: 0.8rem;
-    position: fixed;
-    bottom: -3px;
+    position: relative;
+    bottom: 15px;
     margin:0;
     padding: 2px;
+    padding-left:10px;
+    padding-right: 10px;
   }
   .f-icon {
     width: 15px;
