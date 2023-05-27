@@ -48,6 +48,39 @@ p.lead {
   display: none;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left-auto;
+  margin-right: auto;
+}
+
+.f-text{
+  background: #C0C5C9;
+  border-radius: 20px;
+  padding-left: 5px;
+  padding-right: 8px;
+}
+
+.f-links {
+  display: flex;
+  background: #C0C5C9;
+  border-radius: 20px;
+}
+
+.f-icon {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+
 @media only screen and (max-width: 640px) {
   .headpic {
     display: none;
@@ -67,5 +100,17 @@ p.lead {
   }
   .ios-instruction {
     display: inherit;
+  }
+  .footer {
+    font-size: 0.8rem;
+    position: fixed;
+    bottom: -3px;
+    margin:0;
+    padding: 2px;
+  }
+  .f-icon {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
   }
 }
